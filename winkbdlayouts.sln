@@ -70,7 +70,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kbdukapple", "keyboards\kbd
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kbdurapple", "keyboards\kbdurapple\kbdurapple.vcxproj", "{5E6CD655-9FF5-490B-980C-FAF72F83BF75}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kbdusapple", "keyboards\kbdusapple\kbdusapple.vcxproj", "{04AD1307-1C07-4848-93FF-76005FDCC59A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kbdusmaruska", "keyboards\kbdusmaruska\kbdusmaruska.vcxproj", "{04AD1307-1C07-4848-93FF-76005FDCC59A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kbdfnapplevm", "keyboards\kbdfnapplevm\kbdfnapplevm.vcxproj", "{15D90D05-B6EA-4A66-9A94-53EB51375B96}"
 EndProject
