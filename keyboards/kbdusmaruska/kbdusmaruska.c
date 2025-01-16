@@ -240,7 +240,7 @@ static USHORT scancode_to_vk[] = {
 static VSC_VK scancode_to_vk_e0[] = {
     {0x10, VK_MEDIA_PREV_TRACK | KBDEXT},
     {0x19, VK_MEDIA_NEXT_TRACK | KBDEXT},
-    {0x1D, VK_RCONTROL | KBDEXT},
+    {0x1D, VK_RMENU | KBDEXT},
     {0x20, VK_VOLUME_MUTE | KBDEXT},
     {0x21, VK_LAUNCH_APP2 | KBDEXT},
     {0x22, VK_MEDIA_PLAY_PAUSE | KBDEXT},
@@ -250,7 +250,7 @@ static VSC_VK scancode_to_vk_e0[] = {
     {0x32, VK_BROWSER_HOME | KBDEXT},
     {0x35, VK_DIVIDE | KBDEXT},
     {0x37, VK_SNAPSHOT | KBDEXT},
-    {0x38, VK_RMENU | KBDEXT},
+    {0x38, VK_RCONTROL | KBDEXT},
     {0x47, VK_HOME | KBDEXT},
     {0x48, VK_UP | KBDEXT},
     {0x49, VK_PRIOR | KBDEXT},
