@@ -360,9 +360,23 @@ static VK_TO_WCHARS3 vk_to_wchar3[] = {
     {VK_BACK,    0x00, {UC_BS,  UC_BS,  UC_DEL}},
     {VK_ESCAPE,  0x00, {UC_ESC, UC_ESC, UC_ESC}},
     {VK_RETURN,  0x00, {L'\r',  L'\r',  L'\n'}},
-    {VK_SPACE,   0x00, {L' ',   L' ',   L' '}},
+    {VK_SPACE,   0x00, {L' ',   L' ',   L'0'}},
     {VK_CANCEL,  0x00, {UC_ETX, UC_ETX, UC_ETX}},
-    {0,          0,    0,       0,      0}
+
+    // CAPLOK -> cap
+    // KANALOK ?
+    {'U',      CAPLOK, {L'u',  L'U', L'7'}},
+    {'I',      CAPLOK, {L'i',  L'I', L'8'}},
+    {'O',      CAPLOK, {L'o',  L'O', L'9'}},
+
+    {'J',      CAPLOK, {L'j',  L'J', L'4'}},
+    {'K',      CAPLOK, {L'k',  L'K', L'5'}},
+    {'L',      CAPLOK, {L'l',  L'L', L'6'}},
+
+    {'M',           CAPLOK, {L'm',  L'M', L'1'}},
+    {VK_OEM_COMMA,  0x00,   {L',',  L'<', L'2'}},
+    {VK_OEM_PERIOD, 0x00,   {L'.',  L'>', L'3'}},
+  {0,          0,    0,       0,      0}
 };
 
 //---------------------------------------------------------------------------
@@ -401,9 +415,9 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     {'R',           CAPLOK, {L'r',  L'R'}},
     {'T',           CAPLOK, {L't',  L'T'}},
     {'Y',           CAPLOK, {L'y',  L'Y'}},
-    {'U',           CAPLOK, {L'u',  L'U'}},
-    {'I',           CAPLOK, {L'i',  L'I'}},
-    {'O',           CAPLOK, {L'o',  L'O'}},
+    // {'U',           CAPLOK, {L'u',  L'U'}},
+    // {'I',           CAPLOK, {L'i',  L'I'}},
+    // {'O',           CAPLOK, {L'o',  L'O'}},
     {'P',           CAPLOK, {L'p',  L'P'}},
     {'A',           CAPLOK, {L'a',  L'A'}},
     {'S',           CAPLOK, {L's',  L'S'}},
@@ -411,9 +425,9 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     {'F',           CAPLOK, {L'f',  L'F'}},
     {'G',           CAPLOK, {L'g',  L'G'}},
     {'H',           CAPLOK, {L'h',  L'H'}},
-    {'J',           CAPLOK, {L'j',  L'J'}},
-    {'K',           CAPLOK, {L'k',  L'K'}},
-    {'L',           CAPLOK, {L'l',  L'L'}},
+    // {'J',           CAPLOK, {L'j',  L'J'}},
+    // {'K',           CAPLOK, {L'k',  L'K'}},
+    // {'L',           CAPLOK, {L'l',  L'L'}},
     {VK_OEM_1,      0x00,   {L';',  L':'}},
     {VK_OEM_7,      0x00,   {L'\'', L'"'}},
     {'Z',           CAPLOK, {L'z',  L'Z'}},
@@ -422,9 +436,9 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     {'V',           CAPLOK, {L'v',  L'V'}},
     {'B',           CAPLOK, {L'b',  L'B'}},
     {'N',           CAPLOK, {L'n',  L'N'}},
-    {'M',           CAPLOK, {L'm',  L'M'}},
-    {VK_OEM_COMMA,  0x00,   {L',',  L'<'}},
-    {VK_OEM_PERIOD, 0x00,   {L'.',  L'>'}},
+    // {'M',           CAPLOK, {L'm',  L'M'}},
+    // {VK_OEM_COMMA,  0x00,   {L',',  L'<'}},
+    // {VK_OEM_PERIOD, 0x00,   {L'.',  L'>'}},
     {VK_OEM_2,      0x00,   {L'/',  L'?'}},
     {VK_DECIMAL,    0x00,   {L'.',  L'.'}},
     {VK_TAB,        0x00,   {L'\t', L'\t'}},
