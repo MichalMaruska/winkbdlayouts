@@ -365,6 +365,15 @@ static VK_TO_WCHARS3 vk_to_wchar3[] = {
 
     // CAPLOK -> cap
     // KANALOK ?
+    {'W',           CAPLOK, {L'w',  L'W', L'{'}},
+    {'E',           CAPLOK, {L'e',  L'E', L'}'}},
+
+    {'S',           CAPLOK, {L's',  L'S', L'('}},
+    {'D',           CAPLOK, {L'd',  L'D', L')'}},
+
+    {'X',           CAPLOK, {L'x',  L'X', L'['}},
+    {'C',           CAPLOK, {L'c',  L'C', L']'}},
+
     {'Y',      CAPLOK, {L'y',  L'Y', L'='}},
     {'U',      CAPLOK, {L'u',  L'U', L'7'}},
     {'I',      CAPLOK, {L'i',  L'I', L'8'}},
@@ -415,8 +424,8 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     {'0',           0x00,   {L'0',  L')'}},
     {VK_OEM_PLUS,   0x00,   {L'=',  L'+'}},
     {'Q',           CAPLOK, {L'q',  L'Q'}},
-    {'W',           CAPLOK, {L'w',  L'W'}},
-    {'E',           CAPLOK, {L'e',  L'E'}},
+    //{'W',           CAPLOK, {L'w',  L'W'}},
+    //{'E',           CAPLOK, {L'e',  L'E'}},
     {'R',           CAPLOK, {L'r',  L'R'}},
     {'T',           CAPLOK, {L't',  L'T'}},
     // {'Y',           CAPLOK, {L'y',  L'Y'}},
@@ -425,8 +434,8 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     // {'O',           CAPLOK, {L'o',  L'O'}},
     // {'P',           CAPLOK, {L'p',  L'P'}},
     {'A',           CAPLOK, {L'a',  L'A'}},
-    {'S',           CAPLOK, {L's',  L'S'}},
-    {'D',           CAPLOK, {L'd',  L'D'}},
+    //{'S',           CAPLOK, {L's',  L'S'}},
+    //{'D',           CAPLOK, {L'd',  L'D'}},
     {'F',           CAPLOK, {L'f',  L'F'}},
     {'G',           CAPLOK, {L'g',  L'G'}},
     // {'H',           CAPLOK, {L'h',  L'H'}},
@@ -436,8 +445,8 @@ static VK_TO_WCHARS2 vk_to_wchar2[] = {
     // {VK_OEM_1,      0x00,   {L';',  L':'}},
     {VK_OEM_7,      0x00,   {L'\'', L'"'}},
     {'Z',           CAPLOK, {L'z',  L'Z'}},
-    {'X',           CAPLOK, {L'x',  L'X'}},
-    {'C',           CAPLOK, {L'c',  L'C'}},
+    //{'X',           CAPLOK, {L'x',  L'X'}},
+    //{'C',           CAPLOK, {L'c',  L'C'}},
     {'V',           CAPLOK, {L'v',  L'V'}},
     {'B',           CAPLOK, {L'b',  L'B'}},
     // {'N',           CAPLOK, {L'n',  L'N'}},
