@@ -223,14 +223,16 @@ static USHORT scancode_to_vk[] = {
     /* 74 */ VK__none_,
     /* 75 */ VK__none_,
     /* 76 */ VK_F24,
-    /* 77 */ VK__none_,
-    /* 78 */ VK__none_,
-    /* 79 */ VK__none_,
-    /* 7A */ VK__none_,
+    /* 77 */ VK_KANA,
+    /* 78 */ VK_SHIFT,
+    /* 79 */ VK_OEM_FJ_LOYA,
+    /* 7A */ VK_OEM_FJ_ROYA,
     /* 7B */ VK_OEM_PA1,
-    /* 7C */ VK_TAB,
-    /* 7D */ VK__none_,
+    /* 7C */ VK_ICO_HELP,
+    /* 7D */ VK_OEM_AX,
     /* 7E */ 0x00C2,
+    // fork to this:
+    VK_OEM_8,                    /* VK_KANA is lock! */
 };
 
 //---------------------------------------------------------------------------
