@@ -298,6 +298,22 @@ static VK_TO_BIT vk_to_bits[] = {
     {VK_SHIFT,   KBDSHIFT},
     {VK_CONTROL, KBDCTRL},
     {VK_MENU,    KBDALT},
+
+    {VK_KANA,   KBDKANA}, // lock! avoid!
+    {VK_OEM_8,  KBDKANA},
+
+    {VK_OEM_FJ_ROYA, KBDROYA}, // avoid!
+    {VK_OEM_102, KBDROYA},
+
+    // not necessary:
+    {VK_ICO_HELP, KBDROYA},
+    {VK_OEM_AX,  KBDROYA},
+    {VK_OEM_PA1, KBDROYA},
+    {VK_OEM_PA3, KBDROYA},
+    {VK_F24, KBDROYA},
+
+    // not even used:
+    {VK_OEM_FJ_LOYA, KBDLOYA},
     {0,          0}
 };
 
