@@ -363,33 +363,6 @@ static VK_TO_WCHARS3 vk_to_wchar3[] = {
     {VK_SPACE,   0x00, {L' ',   L' ',   L'0'}},
     {VK_CANCEL,  0x00, {UC_ETX, UC_ETX, UC_ETX}},
 
-    // CAPLOK -> cap
-    // KANALOK ?
-    {'W',           CAPLOK, {L'w',  L'W', L'{'}},
-    {'E',           CAPLOK, {L'e',  L'E', L'}'}},
-
-    {'S',           CAPLOK, {L's',  L'S', L'('}},
-    {'D',           CAPLOK, {L'd',  L'D', L')'}},
-
-    {'X',           CAPLOK, {L'x',  L'X', L'['}},
-    {'C',           CAPLOK, {L'c',  L'C', L']'}},
-
-    {'Y',      CAPLOK, {L'y',  L'Y', L'='}},
-    {'U',      CAPLOK, {L'u',  L'U', L'7'}},
-    {'I',      CAPLOK, {L'i',  L'I', L'8'}},
-    {'O',      CAPLOK, {L'o',  L'O', L'9'}},
-    {'P',      CAPLOK, {L'p',  L'P', L'"'}},
-
-    {'H',      CAPLOK, {L'h',  L'H', L'<'}},
-    {'J',      CAPLOK, {L'j',  L'J', L'4'}},
-    {'K',      CAPLOK, {L'k',  L'K', L'5'}},
-    {'L',      CAPLOK, {L'l',  L'L', L'6'}},
-    {VK_OEM_1,      0x00,   {L';',  L':', L'.'}},
-
-    {'N',           CAPLOK, {L'n',  L'N', L'>'}},
-    {'M',           CAPLOK, {L'm',  L'M', L'1'}},
-    {VK_OEM_COMMA,  0x00,   {L',',  L'<', L'2'}},
-    {VK_OEM_PERIOD, 0x00,   {L'.',  L'>', L'3'}},
   {0,          0,    0,       0,      0}
 };
 
@@ -403,6 +376,35 @@ static VK_TO_WCHARS4 vk_to_wchar4[] = {
     {'2',          0x00, {L'2', L'@', WCH_NONE, 0x0000}},
     {'6',          0x00, {L'6', L'^', WCH_NONE, UC_RS}},
     {VK_OEM_MINUS, 0x00, {L'-', L'_', WCH_NONE, UC_US}},
+
+    // CAPLOK -> cap
+    // KANALOK ?
+    {'W',           CAPLOK, {L'w',  L'W', L'{', L'\''}},
+    {'E',           CAPLOK, {L'e',  L'E', L'}', L'|'}},
+
+    {'S',           CAPLOK, {L's',  L'S', L'(', L'#'}},
+    {'D',           CAPLOK, {L'd',  L'D', L')', L'*'}},
+
+    {'X',           CAPLOK, {L'x',  L'X', L'[', L';'}},
+    {'C',           CAPLOK, {L'c',  L'C', L']', L':'}},
+
+    {'Y',      CAPLOK, {L'y',  L'Y', L'=', L'%'}},
+    {'U',      CAPLOK, {L'u',  L'U', L'7', L'{'}},
+    {'I',      CAPLOK, {L'i',  L'I', L'8', L'|'}},
+    {'O',      CAPLOK, {L'o',  L'O', L'9', L'}'}},
+    {'P',      CAPLOK, {L'p',  L'P', L'"', L'"'}},
+
+    {'H',      CAPLOK, {L'h',  L'H', L'<', L'&'}},
+    {'J',      CAPLOK, {L'j',  L'J', L'4', L'~'}},
+    {'K',      CAPLOK, {L'k',  L'K', L'5', L'/'}},
+    {'L',      CAPLOK, {L'l',  L'L', L'6', L','}},
+    {VK_OEM_1,   0x00, {L';',  L':', L'.', L','}},
+
+    {'N',           CAPLOK, {L'n',  L'N', L'>', L'$'}},
+    {'M',           CAPLOK, {L'm',  L'M', L'1', L'@'}},
+    {VK_OEM_COMMA,  0x00,   {L',',  L'<', L'2', L'.'}},
+    {VK_OEM_PERIOD, 0x00,   {L'.',  L'>', L'3', L'.'}}, // useless
+
     {0,            0,    0,     0,    0,        0}
 };
 
