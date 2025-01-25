@@ -323,12 +323,26 @@ static VK_TO_BIT vk_to_bits[] = {
 
 static MODIFIERS char_modifiers = {
     .pVkToBit    = vk_to_bits,
-    .wMaxModBits = 3,
+    .wMaxModBits = 16,
     .ModNumber   = {
         0, // 000 = <none>
         1, // 001 = Shift
-        2, // 010 = Control
-        3, // 011 = Shift Control
+        SHFT_INVALID, // control
+        SHFT_INVALID, // shift control
+        SHFT_INVALID, // alt
+        SHFT_INVALID, // shift alt
+        SHFT_INVALID, // control alt
+        SHFT_INVALID, // control alt shit
+        2, // KBDKANA,
+        SHFT_INVALID, // Shift + Kana
+        SHFT_INVALID,
+        SHFT_INVALID,
+        SHFT_INVALID,
+        SHFT_INVALID,
+        SHFT_INVALID,
+        SHFT_INVALID,
+        // 16: KBDROYA
+        3,
     }
 };
 
