@@ -47,6 +47,8 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
     Registry reg(err);
     WStringList all_lang_ids;
     if (!reg.getSubKeys(REGISTRY_LAYOUT_KEY, all_lang_ids)) {
+      // warn about error!
+        err.error(L"failed to get registry: set of langs ");
         return 0;
     }
 
@@ -126,6 +128,10 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
         // This means that the keyboard DLL is currently in use.
         // Copy it into a temporary directory and move it on reboot.
         err.info(dll + L" currently in use, will be installed on reboot");
+        // mmc:
+        // verbose
+        err.error(dll + L" currently in use, will be installed on reboot");
+
         const WString temppath(GetSystemTemp() + L"\\" + filename);
         if (!CopyFileW(dll.c_str(), temppath.c_str(), false)) {
             err.error(L"error copying " + dll + " in temp directory: " + ErrorText(errcode));
