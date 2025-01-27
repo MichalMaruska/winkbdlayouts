@@ -61,13 +61,22 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
         const WString layout_id_str(reg.getValue(key, REGISTRY_LAYOUT_ID, L"", false));
         uint16_t layout_id = 0;
         FromHexa(layout_id, layout_id_str);
+
+        // check if already there!
+        if // (all_layout_ids.find(layout_id) != all_layout_ids.end())
+          (all_layout_ids.contains(layout_id)) {
+          err.error(L"found duplicate layout id: " + lang_id + " -> "+ layout_id_str);
+        }
+
         all_layout_ids.insert(layout_id);
+
         max_layout_id = std::max(max_layout_id, layout_id);
 
         // Check if the lang id matches the base language of the new keyboard.
         if ((id & 0xFFFF) == base_language) {
             matching_lang_ids.insert(id);
             if (final_lang_id == 0 && filename == ToLower(reg.getValue(key, REGISTRY_LAYOUT_FILE, L"", true))) {
+              // fixme:
                 err.verbose(filename + " already registered, replacing it");
                 final_lang_id = id;
                 final_layout_id = layout_id;
