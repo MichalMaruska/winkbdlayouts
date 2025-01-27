@@ -61,7 +61,8 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
 
         // Keep track of all layout ids. Ignore missing ids (use 0).
         const WString layout_id_str(reg.getValue(key, REGISTRY_LAYOUT_ID, L"", false));
-        if (! layout_id_str::empty()) {
+        if ( layout_id_str.compare(L"") != 0) {
+          // ::empty()
           uint16_t layout_id = 0;
           FromHexa(layout_id, layout_id_str);
 
