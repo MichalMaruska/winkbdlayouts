@@ -47,6 +47,8 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
     Registry reg(err);
     WStringList all_lang_ids;
     if (!reg.getSubKeys(REGISTRY_LAYOUT_KEY, all_lang_ids)) {
+      // warn about error!
+        err.error(L"failed to get registry: set of langs ");
         return 0;
     }
 
@@ -59,19 +61,34 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
 
         // Keep track of all layout ids. Ignore missing ids (use 0).
         const WString layout_id_str(reg.getValue(key, REGISTRY_LAYOUT_ID, L"", false));
-        uint16_t layout_id = 0;
-        FromHexa(layout_id, layout_id_str);
-        all_layout_ids.insert(layout_id);
-        max_layout_id = std::max(max_layout_id, layout_id);
+        if ( layout_id_str.compare(L"") != 0) {
+          // ::empty()
+          uint16_t layout_id = 0;
+          FromHexa(layout_id, layout_id_str);
 
-        // Check if the lang id matches the base language of the new keyboard.
-        if ((id & 0xFFFF) == base_language) {
+          // check if already there!
+          if // (all_layout_ids.find(layout_id) != all_layout_ids.end())
+            (all_layout_ids.contains(layout_id)) {
+            err.error(L"found duplicate layout id: " + lang_id + " -> " +
+                      layout_id_str);
+          }
+
+          all_layout_ids.insert(layout_id);
+
+          max_layout_id = std::max(max_layout_id, layout_id);
+
+          // Check if the lang id matches the base language of the new keyboard.
+          if ((id & 0xFFFF) == base_language) {
             matching_lang_ids.insert(id);
-            if (final_lang_id == 0 && filename == ToLower(reg.getValue(key, REGISTRY_LAYOUT_FILE, L"", true))) {
-                err.verbose(filename + " already registered, replacing it");
-                final_lang_id = id;
-                final_layout_id = layout_id;
+            if (final_lang_id == 0 &&
+                filename ==
+                ToLower(reg.getValue(key, REGISTRY_LAYOUT_FILE, L"", true))) {
+              // fixme:
+              err.verbose(filename + " already registered, replacing it");
+              final_lang_id = id;
+              final_layout_id = layout_id;
             }
+          }
         }
     }
 
@@ -117,6 +134,10 @@ uint32_t InstallKeyboardLayout(Error& err, const WString& dll, uint16_t base_lan
         // This means that the keyboard DLL is currently in use.
         // Copy it into a temporary directory and move it on reboot.
         err.info(dll + L" currently in use, will be installed on reboot");
+        // mmc:
+        // verbose
+        err.error(dll + L" currently in use, will be installed on reboot");
+
         const WString temppath(GetSystemTemp() + L"\\" + filename);
         if (!CopyFileW(dll.c_str(), temppath.c_str(), false)) {
             err.error(L"error copying " + dll + " in temp directory: " + ErrorText(errcode));

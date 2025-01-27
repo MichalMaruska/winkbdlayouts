@@ -78,5 +78,7 @@ void Options::closeOutput()
         std::cout << "Press return to exit: " << std::flush;
         std::cin.getline(&c, 1);
     }
+    // mmc: scary:
+    std::cout << "calling Error::exit" << std::flush;
     Error::exit(status);
 }

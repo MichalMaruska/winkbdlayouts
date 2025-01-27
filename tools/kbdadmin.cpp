@@ -322,6 +322,8 @@ void ActivateKeyboard(AdminOptions& opt, const WString& lang_id, DWORD int_id)
 
     opt.info(L"Activating language " + lang_id + " (" + (file.empty() ? L"not found" : file) + ")");
     HKL hkl = LoadKeyboardLayoutW(lang_id.c_str(), KLF_ACTIVATE | KLF_REORDER);
+
+    opt.info(Format(L"LoadKeyboardLayoutW finished: %p", hkl));
     if (hkl == NULL) {
         const DWORD err = GetLastError();
         opt.fatal("LoadKeyboardLayout: " + ErrorText(err));
@@ -415,6 +417,7 @@ int wmain(int argc, wchar_t* argv[])
     }
     if (!opt.activate.empty()) {
         ActivateKeyboard(opt);
+        opt.info(L"after ActivateKeyboard");
     }
     if (opt.search_active) {
         SearchActiveKeyboards(opt);
